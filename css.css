@@ -1,0 +1,71 @@
+
+/* Resetowanie domyślnych styli CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style dla nagłówka */
+header {
+    background-color: #3b5998;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Style dla menu nawigacyjnego */
+nav {
+    background-color: #2a4375;
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Style dla głównego obszaru zawartości */
+main {
+    margin: 20px;
+}
+
+/* Style dla sekcji postów */
+.post {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.post h2 {
+    margin-bottom: 5px;
+}
+
+.post p {
+    margin-bottom: 10px;
+}
+
+/* Style dla stopki */
+footer {
+    background-color: #3b5998;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
