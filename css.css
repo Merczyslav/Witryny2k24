@@ -1,3 +1,14 @@
+div#profileContent {
+    text-align: center;
+}
+span#name {
+    font-family: "";
+    font-size: 3rem;
+    line-height: 10rem;
+    display: block;
+}
+
+
 
 /* Resetowanie domyślnych styli CSS */
 * {
