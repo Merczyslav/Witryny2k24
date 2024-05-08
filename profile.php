@@ -1,16 +1,19 @@
 <?php
 
 //kwerenda pobiera jeden profil z tabeli po jego id
-$sql = "SELECT * FROM profile WHERE ID=? LIMIT 1";
+$sql = "SELECT * FROM profile 
+         LEFT JOIN photo ON profile.profilePhotoID = photo.ID
+         WHERE ID=? 
+         LIMIT 1";
 
 //połącz się z bazą danych
-$db = new mysqli('localhost', 'root', '', 'profile');
+$db = new mysqli('localhost', 'root', '', 'strona');
 
 //przygotuj kwerendę do wysłania
 $query = $db->prepare($sql);
 
 //zdefiniuj tymczasowo id na stałe
-$id = 2;
+$id = 1;
 
 //podstaw ID
 $query->bind_param('i', $id);
@@ -27,7 +30,8 @@ $result = $query->get_result()->fetch_assoc();
 
 $firstName = $result['firstName'];
 $lastName = $result['lastName'];
-$destription = $result['destription'];
+$description = $result['description'];
+$profilePhotoUrl = $result['url']
 
 ?>
 <!DOCTYPE html>
@@ -44,8 +48,9 @@ $destription = $result['destription'];
         <?php echo $firstName." " .$lastName; ?>
 
     </span>
-    <img src="https://picsum.photos/600/600" alt="" id="profilePhoto">
-    <p id="profileDestription">
+    <img src="<?php echo $profilePhotoUrl; ?> "
+         alt="" id="profilePhoto">
+    <p id="profileDescription">
         <?php echo $destription; ?>
 
     </p>
